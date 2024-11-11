@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    cursor: url("plik.pdf-removebg-preview.png"), auto;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header {
+    background-color: #0A2043;
+    height: min-content;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #153063;
+    height: min-content;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    background-image: url(kwidzynlandscape.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.left, .center, .right {
+    flex: 1;
+    background-color: #1C4073;
+    padding: 20px; 
+    color: white;
+}
+
+.right {
+    padding-left: 25px;
+}
+
+article {
+    background-color: black;
+}
+
+/* Articles */
+
+/* Inferno Pre Release article */
+#Inferno-pre-release {
+    background-image: url(infernopreview.webp); /* Keep the background image */
+    background-size: cover; /* Ensure the image covers the section */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fixed background effect */
+    position: relative; /* Allows for absolute positioning of overlay */
+    color: #f1f1f1; /* Pale white text for readability */
+    font-family: 'Georgia', serif; /* Gothic font */
+}
+
+    #Inferno-pre-release .text-container {
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+        padding: 20px; /* Add some padding for better spacing */
+        border-radius: 10px; /* Optional: adds rounded corners */
+        max-width: 80%; /* Optional: limits the width of text container */
+        margin: 0 auto; /* Centers the text container */
+    }
+
+    #Inferno-pre-release h1, #Inferno-pre-release h2 {
+        color: #ff4500; /* Fiery red for headers */
+    }
+
+    #Inferno-pre-release p {
+        color: #ffcc00; /* Light orange body text */
+    }
+}
+
+footer {
+    background-color: #0A2043;
+    height: min-content;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.formnav {
+    background-color: blue;
+    color: white; 
+    text-align: center;
+}
+
+.form {
+    color: white;
+}
+
+.nava {
+    color: rgb(255, 255, 255);
+    height: min-content;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+a {
+    color: #4CAF50;
+}
+a:hover {
+    text-shadow: 0 0 1cm #d0f742
+}
+
+form {
+    text-align: center;
+}
+
+.register-container {
+    background-image: url(registrybackground.png);
+    background-position: center;
+    background-size:cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    color: #1a3bce;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #0A2043;
+}
+
+.register-form label {
+    margin-bottom: 0.5em;
+}
+
+.register-form input {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button, input[type="submit"], input[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #45a049;
+}
