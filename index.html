@@ -29,6 +29,13 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
+        <button id="login-button">Login with Xsolla</button>
+        <button id="logout-button" style="display:none;">Logout</button>
+
+        <!-- User info display -->
+            <div id="user-info" style="display:none;">
+                <p id="user-name"></p>
+            </div>
         <div id="login-section">
             <script>
                 const loginButton = document.getElementById("login-button");
