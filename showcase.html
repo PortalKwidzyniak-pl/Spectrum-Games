@@ -31,15 +31,17 @@
         <button id="login-button">Login with Xsolla</button>
 
         <script>
-            // Initialize the SDK
-            XLogin.init({
-                projectId: 273887, // Replace with your actual project ID - Inferno project login
-                redirectUri: "https://<your-username>.github.io/<repo-name>/", // Replace with your GitHub Pages URL
-            });
+            // Initialize the SDK after the page loads
+            window.onload = function() {
+                XLogin.init({
+                    projectId: YOUR_PROJECT_ID, // Replace with your actual project ID
+                    redirectUri: "https://<your-username>.github.io/<repo-name>/", // Replace with your GitHub Pages URL
+                });
     
-            // Set up the button to open a popup window for login
-            document.getElementById("login-button").onclick = function() {
-                XLogin.openPopup();
+                // Set up the button to open a popup window for login
+                document.getElementById("login-button").onclick = function() {
+                    XLogin.openPopup();
+                };
             };
         </script>
         <ol>
