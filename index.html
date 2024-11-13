@@ -29,30 +29,72 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
-        <!-- Login Button -->
-    <button onclick="showFullscreen()">Login with Xsolla</button>
-
-    <!-- Xsolla Login Container (Initially hidden) -->
-    <div id="xl_auth" style="display: none;"></div>
-
-    <script>
-        // Initialize the Xsolla Login Widget
-        const xl = new XsollaLogin.Widget({
-            projectId: 'fdc4f44b-e7f8-49ac-b742-10b8b84fb403', // Use your actual project ID
-            preferredLocale: 'en_US',
-            callbackUrl: 'https://www.specgames.portalkwidzyniak.pl/'
-        });
-
-        // Mount the widget to the div container
-        xl.mount('xl_auth');
-
-        // Function to show the login widget in fullscreen
-        function showFullscreen() {
-            const myDiv = document.querySelector('#xl_auth');
-            myDiv.style.display = 'block'; // Show the container
-            xl.open(); // Open the widget in a fullscreen popup
-        }
-    </script>
+        <div id="login-section">
+            <!-- Login Button -->
+            <button id="login-button" onclick="showFullscreen()">Login with Xsolla</button>
+        </div>
+    
+        <!-- User Info Section (Initially hidden) -->
+        <div id="user-info" style="display: none;">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <button onclick="logout()">Logout</button>
+        </div>
+    
+        <script>
+            // Initialize Xsolla Widget with your new projectId
+            const xl = new XsollaLogin.Widget({
+                projectId: 'fdc4f44b-e7f8-49ac-b742-10b8b84fb403',  // Your actual project ID
+                preferredLocale: 'en_US'
+            });
+    
+            xl.mount('login-section');  // Mount the login widget
+    
+            // Function to show login in fullscreen
+            function showFullscreen() {
+                xl.open();
+            }
+    
+            // Check if user is logged in on page load
+            function checkLoginStatus() {
+                xl.getToken(function(token) {
+                    if (token) {
+                        // User is logged in
+                        displayUserInfo();
+                    } else {
+                        // User is not logged in
+                        displayLoginButton();
+                    }
+                });
+            }
+    
+            // Display the user's information after login
+            function displayUserInfo() {
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("user-info").style.display = "block";
+                
+                // Optionally, get user profile data (like username)
+                xl.getUserDetails(function(user) {
+                    if (user) {
+                        document.getElementById("username").textContent = user.nickname || "User";
+                    }
+                });
+            }
+    
+            // Display the login button if the user is not logged in
+            function displayLoginButton() {
+                document.getElementById("login-section").style.display = "block";
+                document.getElementById("user-info").style.display = "none";
+            }
+    
+            // Log the user out
+            function logout() {
+                xl.logout();
+                displayLoginButton();
+            }
+    
+            // Check login status on page load
+            checkLoginStatus();
+        </script>
         <ol>
             <li><a class="nava" href="https://www.specgames.portalkwidzyniak.pl/showcase.html">Games Showcase</a><br></li>
             <li><a class="nava" href="https://www.portalkwidzyniak.pl/">SpecGames host</a><br></li>
