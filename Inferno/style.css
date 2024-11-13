@@ -59,13 +59,13 @@ article {
 #Inferno-pre-release, #Overview {
     background-image: url(Infernopreview.webp); /* Keep the background image */
     background-attachment: fixed;
-    border-radius: 20px;
+    border-radius: 20vw;
 }
 
 /* Inferno Pre Release article */
 #Inferno-pre-release {
     border-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
+    padding: 20vw;
     background-size: cover; /* Ensure the image covers the section */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Fixed background effect */
@@ -76,9 +76,9 @@ article {
 
     #Inferno-pre-release .text-container {
         background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-        padding: 20px; /* Add some padding for better spacing */
-        border-radius: 10px; /* Optional: adds rounded corners */
-        max-width: 80%; /* Optional: limits the width of text container */
+        padding: 20vw; /* Add some padding for better spacing */
+        border-radius: 10vw; /* Optional: adds rounded corners */
+        max-width: 80vw; /* Optional: limits the width of text container */
         margin: 0 auto; /* Centers the text container */
     }
 
@@ -93,8 +93,8 @@ article {
 
     /* Overview */
 #Overview {
-    border-radius: 20px;
-    padding: 40px;
+    border-radius: 20vw;
+    padding: 40vw;
     background-size: cover; /* Ensure the image covers the section */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Fixed background effect */
@@ -103,13 +103,13 @@ article {
     font-family: 'Georgia', serif; /* Gothic font */
 }
 #Overview img {
-    max-width:70vw;
+    max-width:35vw;
     height:auto;
 }
 #Overview .text-container {
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    padding: 20px; /* Add some padding for better spacing */
-    border-radius: 10px; /* Optional: adds rounded corners */
+    padding: 20vw; /* Add some padding for better spacing */
+    border-radius: 10vw; /* Optional: adds rounded corners */
     max-width: 80vw; /* Optional: limits the width of text container */
     margin: 0 auto; /* Centers the text container */
 }
@@ -131,7 +131,7 @@ footer {
 }
 
 .nava {
-    color: rgb(255, 255, 255);
+    color: white;
     height: min-content;
     width: 100vw;
     font-family: "Roboto", sans-serif;
