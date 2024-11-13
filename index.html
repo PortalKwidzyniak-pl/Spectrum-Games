@@ -29,25 +29,30 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
-        <script>
-            const xl = new XsollaLogin.Widget({
-              projectId: '273887',
-              preferredLocale: 'en_US'
-            });
-            </script>
-        <div id="xl_auth" style="display: none">
-            <script type="text/javascript">
-                xl.mount('xl_auth');
-              
-                function showFullscreen() {
-                  const myDiv = document.querySelector('#xl_auth');
-                  myDiv.style.display = 'block';
-              
-                  xl.open();
-                }
-              </script>
-        </div>
-            <button onclick="showFullscreen()">Login with xsolla</button>
+        <!-- Login Button -->
+    <button onclick="showFullscreen()">Login with Xsolla</button>
+
+    <!-- Xsolla Login Container (Initially hidden) -->
+    <div id="xl_auth" style="display: none;"></div>
+
+    <script>
+        // Initialize the Xsolla Login Widget
+        const xl = new XsollaLogin.Widget({
+            projectId: '273887', // Use your actual project ID
+            preferredLocale: 'en_US',
+            callbackUrl: 'https://www.specgames.portalkwidzyniak.pl/'
+        });
+
+        // Mount the widget to the div container
+        xl.mount('xl_auth');
+
+        // Function to show the login widget in fullscreen
+        function showFullscreen() {
+            const myDiv = document.querySelector('#xl_auth');
+            myDiv.style.display = 'block'; // Show the container
+            xl.open(); // Open the widget in a fullscreen popup
+        }
+    </script>
         <ol>
             <li><a class="nava" href="https://www.specgames.portalkwidzyniak.pl/showcase.html">Games Showcase</a><br></li>
             <li><a class="nava" href="https://www.portalkwidzyniak.pl/">SpecGames host</a><br></li>
