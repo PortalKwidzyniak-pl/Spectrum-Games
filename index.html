@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Xsolla Login SDK -->
+    <script src="https://cdn.xsolla.net/sdk/js/xsolla-login-sdk/latest/xsolla-login-sdk.min.js"></script>
 </head>
 <body>
     <header>
@@ -26,6 +28,20 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
+        <button id="login-button">Login with Xsolla</button>
+
+    <script>
+        // Initialize the SDK
+        XLogin.init({
+            projectId: 273887, // Replace with your actual project ID - Inferno project login
+            redirectUri: "https://<your-username>.github.io/<repo-name>/", // Replace with your GitHub Pages URL
+        });
+
+        // Set up the button to open a popup window for login
+        document.getElementById("login-button").onclick = function() {
+            XLogin.openPopup();
+        };
+    </script>
         <ol>
             <li><a class="nava" href="https://www.specgames.portalkwidzyniak.pl/showcase.html">Games Showcase</a><br></li>
             <li><a class="nava" href="https://www.portalkwidzyniak.pl/">SpecGames host</a><br></li>
