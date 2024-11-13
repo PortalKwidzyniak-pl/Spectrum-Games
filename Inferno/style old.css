@@ -1,0 +1,134 @@
+/* Reset and Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: url(".png"), auto;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/* Header and Nav Styling */
+header, nav, footer, .left, .right {
+    background-attachment: fixed;
+    background-image: url(BackgroundInferno.webp);
+}
+
+header {
+    width: 90vw; /* Slight padding on each side */
+    margin: 0 auto;
+    text-align: center;
+    padding: 2vh 0; /* Vertical padding */
+    color: white;
+}
+
+nav {
+    background-color: black;
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.5vh 0;
+    color: white;
+}
+
+/* Main Container */
+.container {
+    width: 100vw;
+    display: flex;
+    flex: 1;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Sidebar Panels */
+.left, .right {
+    flex: 1;
+    background-color: rgba(28, 64, 115, 0.5);
+    padding: 5vw;
+    color: white;
+}
+
+/* Articles */
+#Inferno-pre-release, #Overview {
+    background-image: url(Infernopreview.webp);
+    background-attachment: fixed;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 10vw 5vw; /* Reduced padding for better mobile compatibility */
+    color: #f1f1f1;
+    font-family: 'Georgia', serif;
+    position: relative;
+}
+
+#Inferno-pre-release .text-container,
+#Overview .text-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5vw; /* Smaller padding for responsive design */
+    border-radius: 10px;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+/* Text Styling */
+#Inferno-pre-release h1, #Inferno-pre-release h2,
+#Overview h1, #Overview h2 {
+    color: #ff4500; /* Fiery red for headers */
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+#Inferno-pre-release p, #Overview p {
+    color: #ffcc00;
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Responsive font sizing */
+}
+
+/* Overview Image */
+#Overview img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: #0A2043;
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.5vh 0;
+    color: white;
+}
+
+.nava {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header, nav, footer {
+        width: 90vw;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+        padding: 5vw 3vw; /* Adjust padding for mobile */
+    }
+    #Inferno-pre-release, #Overview {
+        padding: 8vw 3vw; /* Smaller padding for mobile */
+    }
+}
