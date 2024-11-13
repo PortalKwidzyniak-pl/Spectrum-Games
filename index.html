@@ -29,6 +29,12 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
+        <script>
+            const xl = new XsollaLogin.Widget({
+              projectId: '273887',
+              preferredLocale: 'en_US'
+            });
+            </script>
         <div id="xl_auth" style="display: none">
             <script type="text/javascript">
                 xl.mount('xl_auth');
@@ -42,12 +48,6 @@
               </script>
         </div>
             <button onclick="showFullscreen()">Login with xsolla</button>
-        <script>
-            const xl = new XsollaLogin.Widget({
-              projectId: '273887',
-              preferredLocale: 'en_US'
-            });
-            </script>
         <ol>
             <li><a class="nava" href="https://www.specgames.portalkwidzyniak.pl/showcase.html">Games Showcase</a><br></li>
             <li><a class="nava" href="https://www.portalkwidzyniak.pl/">SpecGames host</a><br></li>
