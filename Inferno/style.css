@@ -15,7 +15,7 @@ body, html {
     flex-direction: column;
     color: white;
 }
-header, footer, #Inferno-pre-release, nav, .left, .right {
+header, footer, nav, .left, .right {
     background-attachment: fixed;
     background-image: url(BackgroundInferno.webp);
 }
@@ -61,6 +61,7 @@ article {
 /* Articles */
 #Inferno-pre-release, #Overview {
     background-image: url(Infernopreview.webp); /* Keep the background image */
+    background-attachment: fixed;
     border-radius: 20px;
 }
 
