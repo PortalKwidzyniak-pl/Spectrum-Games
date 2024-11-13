@@ -44,7 +44,8 @@
             // Initialize Xsolla Widget with your new projectId
             const xl = new XsollaLogin.Widget({
                 projectId: 'fdc4f44b-e7f8-49ac-b742-10b8b84fb403',  // Your actual project ID
-                preferredLocale: 'en_US'
+                preferredLocale: 'en_US',
+                callbackUrl: 'https://www.specgames.portalkwidzyniak.pl/'
             });
     
             xl.mount('login-section');  // Mount the login widget
