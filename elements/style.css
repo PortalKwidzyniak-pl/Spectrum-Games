@@ -72,5 +72,6 @@ footer {
 nav button {
     padding: 10px;
     background-color: #AFAF0F;
-    border-radius: 0vw;
+    border-radius: 10vw;
+    box-shadow: none;
 }
