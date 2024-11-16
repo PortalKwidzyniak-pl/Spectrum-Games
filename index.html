@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Xsolla Login SDK -->
-    <script src="https://cdn.xsolla.com/js/launcher.js"></script>
-    <script src="https://cdn.xsolla.net/xsolla-login-widget/sdk/2.2.6/xl.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="721432691754-gp4mp695q4pi0v3gqui75t7c92lt4utv.apps.googleusercontent.com">
+
 </head>
 <body>
     <header>
@@ -29,56 +29,25 @@
     </header>
     <nav>
         <h3>Menu <a href="https://www.specgames.portalkwidzyniak.pl/index.html">Spectrum Games</a></h3><br>
-        <button id="login-button">Login with Xsolla</button>
-        <button id="logout-button" style="display:none;">Logout</button>
-
-        <!-- User info display -->
-            <div id="user-info" style="display:none;">
-                <p id="user-name"></p>
-            </div>
-        <div id="login-section">
-            <script>
-                const loginButton = document.getElementById("login-button");
-                const logoutButton = document.getElementById("logout-button");
-                const userInfo = document.getElementById("user-info");
-                const userName = document.getElementById("user-name");
-            
-                // Initialize Xsolla Login Widget
-                const xl = new XsollaLogin.Widget({
-                    projectId: 'fdc4f44b-e7f8-49ac-b742-10b8b84fb403', // Your actual project ID
-                        callbackUrl: 'https://www.specgames.portalkwidzyniak.pl/',
-                    preferredLocale: 'en_US'
-                });
-            
-                // Mount the widget (if using a custom mount)
-                xl.mount('xl_auth');
-            
-                // Show the login popup when the button is clicked
-                loginButton.onclick = function() {
-                    xl.open(); // Open the Xsolla login popup
-                };
-            
-                // When the user logs in successfully, update the UI
-                xl.on('login', function(user) {
-                    console.log('User logged in:', user);
-            
-                    // Show user information
-                    userName.textContent = `Welcome, ${user.displayName}`;  // Display the logged-in user's name
-                    userInfo.style.display = 'block';  // Show the user info div
-            
-                    // Hide the login button and show the logout button
-                    loginButton.style.display = 'none';
-                    logoutButton.style.display = 'inline-block';
-                });
-            
-                // When the user logs out, update the UI
-                logoutButton.onclick = function() {
-                    xl.logout();
-                    userInfo.style.display = 'none';
-                    loginButton.style.display = 'inline-block';
-                    logoutButton.style.display = 'none';
-                };
-            </script>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+        <script>
+            function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+        </script>
         <ol>
             <li><a class="nava" href="https://www.specgames.portalkwidzyniak.pl/showcase.html">Games Showcase</a><br></li>
             <li><a class="nava" href="https://www.portalkwidzyniak.pl/">SpecGames host</a><br></li>
